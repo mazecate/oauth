@@ -95,7 +95,10 @@ app.get("/logout", function(req, res) {
         if (err) { return next(err); }
         res.redirect('/');
     });
-    res.send("logout was successful!");
+    /* Please comment this line, else it will show the error message 
+    *  Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    *  res.send("logout was successful!");
+    */
 });
 
 // launch the app
